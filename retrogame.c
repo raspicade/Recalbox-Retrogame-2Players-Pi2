@@ -91,36 +91,33 @@ struct {
 	// This pin/key table is used if an Adafruit PiTFT display
 	// is detected (e.g. Cupcade or PiGRRL).
 	// Input   Output (from /usr/include/linux/input.h)
-	//Player 1 config
-	{  2,     KEY_UP       },   // Up
-	{  3,     KEY_DOWN     },   // Down
-	{  4,     KEY_LEFT     },   // Left Joystick (4 pins)
-	{ 17,     KEY_RIGHT    },   // Right
-	{ 27,     KEY_LEFTCTRL },   // Button 1
-	{ 22,     KEY_LEFTALT  },   // Button 2
-	{ 10,     KEY_SPACE  },     // Button 3
-	{  9,     KEY_LEFTSHIFT  },   // Button 4
-	{ 11,     KEY_Z  },   // Button 5
-	{  5,     KEY_X  },   // Button 6
-	{  6,     KEY_1  },   // Button Start P1
-	{ 13,     KEY_5  },   // Button Coins/Credits P1
-	//Player 2 config
-	{  18,     KEY_R       },   // Up
-	{  23,     KEY_F     },   // Down
-	{  24,     KEY_D     },   // Left Joystick (4 pins)
-	{  25,     KEY_G    },   // Right
-	{   8,     KEY_A },   // Button 1
-	{   7,     KEY_S  },   // Button 2
-	{  12,     KEY_Q  },     // Button 3
-	{  16,     KEY_W  },   // Button 4
-	{  20,     KEY_E  },   // Button 5
-	{  21,     KEY_T  },   // Button 6
-	{  19,     KEY_2  },   // Button Start P2
-	{  26,     KEY_6  },   // Button Coins/Credits P2
-	// Button to halt system on pin 15 -> sudo halt
-	{  14, 	   KEY_0 },    // Button to exit emulators and programs
-	{  15, 	   KEY_ESC },    // Button to exit emulators and programs
-	// For credit/start/etc., use USB keyboard or add more buttons.
+	//GPIO Mapping
+	{  2,     KEY_0       },   	// HotKey Player1
+	{  3,     KEY_9     },    	// HotKey Player2
+	{  4,     KEY_UP     },   	// UP Player1
+	{ 17,     KEY_DOWN    },   	// DOWN Player1
+	{ 27,     KEY_LEFT },   	// LEFT Player1
+	{ 22,     KEY_RIGHT  },  	// RIGHT Player1
+	{ 10,     KEY_1  },    		// START Player1
+	{  9,     KEY_5  },   		// COIN/SELECT Player1
+	{ 11,     KEY_R  },   		// UP Player2
+	{  5,     KEY_F  },   		// DOWN Player2
+	{  6,     KEY_D  },   		// LEFT Player2
+	{ 13,     KEY_G  },   		// RIGHT Player2
+	{ 19,     KEY_2  },   		// START Player2
+	{ 26,     KEY_6  },   		// COIN/SELECT Player2
+	{ 14,     KEY_Z  },   		// BUTTON5/TL Player1
+	{ 15,     KEY_SPACE  },   	// BUTTON2/X Player1
+	{ 18,     KEY_LEFTSHIFT },  // BUTTON4/Y Player1
+	{  23,    KEY_X     },      // BUTTON6/TR Player1
+	{  24,    KEY_LEFTCTRL  },  // BUTTON1/A Player1
+	{  25,    KEY_LEFTALT   },  // BUTTON2/B Player1
+	{   8,    KEY_E },     		// BUTTON5/TL Player2
+	{   7,    KEY_Q  },   		// BUTTON3/X Player2
+	{  12,    KEY_S  },     	// BUTTON2/Y Player2
+	{  16,    KEY_T  },   		// BUTTON6/TR Player2
+	{  20,    KEY_A  },   		// BUTTON1/A Player2
+	{  21,    KEY_S  },   		// BUTTON2/B Player2
 	{  -1,     -1           } }; // END OF LIST, DO NOT CHANGE
 
 	// MAME must be configured with 'z' & 'x' as buttons 1 & 2 -
@@ -490,16 +487,16 @@ int main(int argc, char *argv[]) {
 						extstate[j] = intstate[j];
 						keyEv.code  = io[i].key;
 						keyEv.value = intstate[j];
-						if ((keyEv.code==KEY_0)&&(keyEv.value==1))
-						{
-							system("sudo halt");
+						//if ((keyEv.code==KEY_0)&&(keyEv.value==1))
+						//{
+						//	system("sudo halt");
 							//system("echo \"that works\"");
-						}
-						else
-						{
+						//}
+						//else
+						//{
 							write(fd, &keyEv,
 							sizeof(keyEv));
-						}
+						//}
 						//write(fd, &keyEv,
 						//sizeof(keyEv));
 						c = 1; // Follow w/SYN event
