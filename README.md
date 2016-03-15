@@ -25,34 +25,32 @@ Pinout Mapping
 ==============
 
 ````
-Player 1 :
-GPIO 02 -> KEY_UP       // Up
-GPIO 03 -> KEY_DOWN     // Down
-GPIO 04 -> KEY_LEFT     // Left Joystick (4 pins)
-GPIO 17 -> KEY_RIGHT    // Right
-GPIO 27 -> KEY_LEFTCTRL // Button 1
-GPIO 22 -> KEY_LEFTALT  // Button 2
-GPIO 10 -> KEY_SPACE    // Button 3
-GPIO 09 -> KEY_LEFTSHIFT// Button 4
-GPIO 11 -> KEY_Z        // Button 5
-GPIO 05 -> KEY_X        // Button 6
-GPIO 06 -> KEY_1        // Button Start P1
-GPIO 13 -> KEY_5        // Button Coins/Credits P1
-
-Player 2 :
-GPIO 18 -> KEY_R        // Up
-GPIO 23 -> KEY_F        // Down
-GPIO 24 -> KEY_D        // Left Joystick (4 pins)
-GPIO 25 -> KEY_G        // Right
-GPIO 08 -> KEY_A        // Button 1
-GPIO 07 -> KEY_S        // Button 2
-GPIO 12 -> KEY_Q        // Button 3
-GPIO 16 -> KEY_W        // Button 4
-GPIO 20 -> KEY_E        // Button 5
-GPIO 21 -> KEY_T        // Button 6
-GPIO 19 -> KEY_2        // Button Start P2
-GPIO 26 -> KEY_6        // Button Coins/Credits P2
-GPIO 15 -> KEY_ESC      // Button to quit emultors/programs 
+	GPIO 02 ->  KEY_0         // HotKey Player1
+	GPIO 03 ->  KEY_9         // HotKey Player2
+	GPIO 04 ->  KEY_UP        // UP Player1
+	GPIO 17 ->  KEY_DOWN      // DOWN Player1
+	GPIO 27 ->  KEY_LEFT      // LEFT Player1
+	GPIO 22 ->  KEY_RIGHT     // RIGHT Player1
+	GPIO 10 ->  KEY_1         // START Player1
+	GPIO 09 ->  KEY_5   		  // COIN/SELECT Player1
+	GPIO 11 ->  KEY_R   		  // UP Player2
+	GPIO 05 ->  KEY_F    		  // DOWN Player2
+	GPIO 06 ->  KEY_D   		  // LEFT Player2
+	GPIO 13 ->  KEY_G   		  // RIGHT Player2
+	GPIO 19 ->  KEY_2   		  // START Player2
+	GPIO 26 ->  KEY_6   		  // COIN/SELECT Player2
+	GPIO 14 ->  KEY_Z   		  // BUTTON5/TL Player1
+	GPIO 15 ->  KEY_SPACE  	  // BUTTON2/X Player1
+	GPIO 18 ->  KEY_LEFTSHIFT // BUTTON4/Y Player1
+	GPIO 23 ->  KEY_X         // BUTTON6/TR Player1
+	GPIO 24 ->  KEY_LEFTCTRL  // BUTTON1/A Player1
+	GPIO 25 ->  KEY_LEFTALT   // BUTTON2/B Player1
+	GPIO 08 ->  KEY_E     		// BUTTON5/TL Player2
+	GPIO 07 ->  KEY_Q     		// BUTTON3/X Player2
+	GPIO 12 ->  KEY_S       	// BUTTON2/Y Player2
+	GPIO 16 ->  KEY_T     		// BUTTON6/TR Player2
+	GPIO 20 ->  KEY_A     		// BUTTON1/A Player2
+	GPIO 21 ->  KEY_S     		// BUTTON2/B Player2
 ````
 
 Maintaining Start P1 + Coins/Credits P1 more than 1 seconds will produce "KEY_ESC" (Escape Key).
