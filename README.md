@@ -105,7 +105,7 @@ Each emulator will have its own method for configuring keyboard input. Set them 
 Arcade Wiring
 =============
 
-See https://github.com/ian57/Raspicade-Retrogame-2Player-BPlus/wiki
+See https://github.com/ian57/Recalbox-Retrogame-2Players-Pi2/wiki
 
 
 
