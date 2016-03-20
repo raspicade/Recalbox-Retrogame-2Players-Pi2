@@ -47,10 +47,10 @@ Pinout Mapping
 	GPIO 25 ->  KEY_LEFTALT   // BUTTON2/B Player1
 	GPIO 08 ->  KEY_E     		// BUTTON5/TL Player2
 	GPIO 07 ->  KEY_Q     		// BUTTON3/X Player2
-	GPIO 12 ->  KEY_S       	// BUTTON2/Y Player2
+	GPIO 12 ->  KEY_W       	// BUTTON4/Y Player2
 	GPIO 16 ->  KEY_T     		// BUTTON6/TR Player2
 	GPIO 20 ->  KEY_A     		// BUTTON1/A Player2
-	GPIO 21 ->  KEY_S     		// BUTTON2/B Player2
+	GPIO 21 ->  KEY_s     		// BUTTON2/B Player2
 ````
 
 Maintaining Start P1 + Coins/Credits P1 more than 1 seconds will produce "KEY_ESC" (Escape Key).
